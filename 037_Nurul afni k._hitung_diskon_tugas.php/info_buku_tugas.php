@@ -28,8 +28,8 @@
         ],
         [
             "judul" => "Belajar MySQL Dasar",
-            "pengarang" => "Andi Setiawan",
-            "penerbit" => "Elex Media",
+            "pengarang" => "Kim Dokja",
+            "penerbit" => "KDJ Company",
             "tahun" => 2022,
             "harga" => 75000,
             "stok" => 10,
@@ -41,8 +41,8 @@
         ],
         [
             "judul" => "HTML & CSS for Beginners",
-            "pengarang" => "John Doe",
-            "penerbit" => "TechPress",
+            "pengarang" => "Yoo Joonghyuk",
+            "penerbit" => "YJH Publishing",
             "tahun" => 2021,
             "harga" => 95000,
             "stok" => 8,
@@ -54,8 +54,8 @@
         ],
         [
             "judul" => "JavaScript Modern",
-            "pengarang" => "Rina Kurnia",
-            "penerbit" => "Informatika",
+            "pengarang" => "Han Sooyoung",
+            "penerbit" => "tls13",
             "tahun" => 2024,
             "harga" => 120000,
             "stok" => 12,
