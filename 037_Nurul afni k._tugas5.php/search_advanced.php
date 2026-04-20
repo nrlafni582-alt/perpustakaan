@@ -3,18 +3,18 @@ session_start();
 
 // Data buku (minimal 10)
 $buku_list = [
-    ["kode" => "BK001", "judul" => "Belajar PHP Dasar", "kategori" => "Pemrograman", "pengarang" => "John Doe", "penerbit" => "Tech Books", "tahun" => 2020, "harga" => 75000, "stok" => 15],
-    ["kode" => "BK002", "judul" => "JavaScript Advanced", "kategori" => "Pemrograman", "pengarang" => "Jane Smith", "penerbit" => "Web Dev Press", "tahun" => 2021, "harga" => 95000, "stok" => 10],
-    ["kode" => "BK003", "judul" => "Database MySQL", "kategori" => "Database", "pengarang" => "Bob Johnson", "penerbit" => "Data Corp", "tahun" => 2019, "harga" => 85000, "stok" => 8],
-    ["kode" => "BK004", "judul" => "HTML & CSS Guide", "kategori" => "Web Design", "pengarang" => "Alice Brown", "penerbit" => "Design Books", "tahun" => 2022, "harga" => 65000, "stok" => 20],
-    ["kode" => "BK005", "judul" => "Python for Beginners", "kategori" => "Pemrograman", "pengarang" => "Charlie Wilson", "penerbit" => "Code Academy", "tahun" => 2023, "harga" => 80000, "stok" => 12],
-    ["kode" => "BK006", "judul" => "Machine Learning Basics", "kategori" => "AI", "pengarang" => "Diana Lee", "penerbit" => "AI Press", "tahun" => 2021, "harga" => 120000, "stok" => 5],
-    ["kode" => "BK007", "judul" => "Cyber Security", "kategori" => "Keamanan", "pengarang" => "Eve Garcia", "penerbit" => "Secure Books", "tahun" => 2020, "harga" => 100000, "stok" => 7],
-    ["kode" => "BK008", "judul" => "Mobile App Development", "kategori" => "Mobile", "pengarang" => "Frank Miller", "penerbit" => "App Dev Inc", "tahun" => 2022, "harga" => 110000, "stok" => 9],
-    ["kode" => "BK009", "judul" => "Data Science with R", "kategori" => "Data Science", "pengarang" => "Grace Taylor", "penerbit" => "Data Insights", "tahun" => 2023, "harga" => 130000, "stok" => 6],
-    ["kode" => "BK010", "judul" => "Web Development Full Stack", "kategori" => "Web Development", "pengarang" => "Henry Davis", "penerbit" => "Full Stack Press", "tahun" => 2021, "harga" => 140000, "stok" => 4],
-    ["kode" => "BK011", "judul" => "Algorithm and Data Structures", "kategori" => "Pemrograman", "pengarang" => "Ivy Chen", "penerbit" => "Algo Books", "tahun" => 2018, "harga" => 90000, "stok" => 11],
-    ["kode" => "BK012", "judul" => "Cloud Computing", "kategori" => "Cloud", "pengarang" => "Jack White", "penerbit" => "Cloud Tech", "tahun" => 2022, "harga" => 115000, "stok" => 8],
+    ["kode" => "BK001", "judul" => "Belajar PHP Dasar", "kategori" => "Pemrograman", "pengarang" => "Kim Dokja", "penerbit" => "KDJ Company", "tahun" => 2020, "harga" => 75000, "stok" => 15],
+    ["kode" => "BK002", "judul" => "JavaScript Advanced", "kategori" => "Pemrograman", "pengarang" => "Yoo Joonghyuk", "penerbit" => "YJH Publishing", "tahun" => 2021, "harga" => 95000, "stok" => 10],
+    ["kode" => "BK003", "judul" => "Database MySQL", "kategori" => "Database", "pengarang" => "Han Sooyoung", "penerbit" => "tls13", "tahun" => 2019, "harga" => 85000, "stok" => 8],
+    ["kode" => "BK004", "judul" => "HTML & CSS Guide", "kategori" => "Web Design", "pengarang" => "Sangah Yoo", "penerbit" => "Olimpus Design", "tahun" => 2022, "harga" => 65000, "stok" => 20],
+    ["kode" => "BK005", "judul" => "Python for Beginners", "kategori" => "Pemrograman", "pengarang" => "Pildu Gong", "penerbit" => "Code Academy", "tahun" => 2023, "harga" => 80000, "stok" => 12],
+    ["kode" => "BK006", "judul" => "Machine Learning Basics", "kategori" => "AI", "pengarang" => "Jung Heewon", "penerbit" => "AI Press", "tahun" => 2021, "harga" => 120000, "stok" => 5],
+    ["kode" => "BK007", "judul" => "Cyber Security", "kategori" => "Keamanan", "pengarang" => "Lee Hyunsung", "penerbit" => "Secure Asgard", "tahun" => 2020, "harga" => 100000, "stok" => 7],
+    ["kode" => "BK008", "judul" => "Mobile App Development", "kategori" => "Mobile", "pengarang" => "Seolhwa Lee", "penerbit" => "App Dev Inc", "tahun" => 2022, "harga" => 110000, "stok" => 9],
+    ["kode" => "BK009", "judul" => "Data Science with R", "kategori" => "Data Science", "pengarang" => "Gilyoung Lee", "penerbit" => "Papyrus Insights", "tahun" => 2023, "harga" => 130000, "stok" => 6],
+    ["kode" => "BK010", "judul" => "Web Development Full Stack", "kategori" => "Web Development", "pengarang" => "Uriel", "penerbit" => "Eden Press", "tahun" => 2021, "harga" => 140000, "stok" => 4],
+    ["kode" => "BK011", "judul" => "Algorithm and Data Structures", "kategori" => "Pemrograman", "pengarang" => "Mia Yoo", "penerbit" => "Vedas Books", "tahun" => 2018, "harga" => 90000, "stok" => 11],
+    ["kode" => "BK012", "judul" => "Cloud Computing", "kategori" => "Cloud", "pengarang" => "Wukong Sun", "penerbit" => "Emperor Tech", "tahun" => 2022, "harga" => 115000, "stok" => 8],
 ];
 
 // Kategori unik untuk dropdown
