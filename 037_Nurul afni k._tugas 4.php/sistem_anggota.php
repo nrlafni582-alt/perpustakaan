@@ -12,12 +12,15 @@ $anggota_list = [
 
 // Pencarian berdasarkan nama
 $keyword = $_GET['search'] ?? "";
+$sort = $_GET['sort'] ?? "";
 if ($keyword != "") {
     $anggota_list = search_nama($anggota_list, $keyword);
 }
 
-// Urutkan berdasarkan nama
-$anggota_list = sort_nama($anggota_list);
+// Urutkan berdasarkan nama jika diminta
+if ($sort === 'nama') {
+    $anggota_list = sort_nama($anggota_list);
+}
 
 // Hitung statistik
 $total = hitung_total_anggota($anggota_list);
@@ -47,11 +50,21 @@ $nonaktif_list = filter_by_status($anggota_list, "Non-Aktif");
 
     <h2 class="mb-4">Sistem Anggota Perpustakaan</h2>
 
-    <!-- Form Pencarian -->
+    <!-- Form Pencarian dan Sort -->
     <form class="mb-3" method="GET">
-        <div class="input-group w-50">
-            <input type="text" name="search" placeholder="Cari nama anggota..." class="form-control" value="<?= htmlspecialchars($keyword) ?>">
-            <button class="btn btn-primary" type="submit">Cari</button>
+        <div class="row g-2 align-items-center w-100">
+            <div class="col-md-6">
+                <input type="text" name="search" placeholder="Cari nama anggota..." class="form-control" value="<?= htmlspecialchars($keyword) ?>">
+            </div>
+            <div class="col-md-3">
+                <select name="sort" class="form-select">
+                    <option value="" <?= $sort !== 'nama' ? 'selected' : '' ?>>Urutkan</option>
+                    <option value="nama" <?= $sort === 'nama' ? 'selected' : '' ?>>Nama A-Z</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary w-100" type="submit">Terapkan</button>
+            </div>
         </div>
     </form>
 

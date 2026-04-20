@@ -10,54 +10,70 @@ $max_pinjaman = 3;
 $denda_per_hari_per_buku = 1000;
 $max_denda = 50000;
 
-// Tampilkan Informasi Anggota
-echo "Informasi Anggota:<br>";
-echo "Nama: $nama_anggota<br>";
-echo "Total Pinjaman: $total_pinjaman<br>";
-echo "Buku Terlambat: $buku_terlambat<br>";
-echo "Hari Keterlambatan: $hari_keterlambatan<br><br>";
-
-// Status Peminjaman Saat Ini
-echo "Status Peminjaman Saat Ini:<br>";
-echo "Total Pinjaman: $total_pinjaman buku<br>";
+// Hitung status dan denda
+$total_denda = 0;
 if ($buku_terlambat > 0) {
-    echo "Ada $buku_terlambat buku yang terlambat dikembalikan.<br><br>";
-} else {
-    echo "Tidak ada buku yang terlambat.<br><br>";
-}
-
-// Menggunakan IF-ELSEIF-ELSE
-echo "Cek Kemampuan Pinjam Lagi:<br>";
-if ($total_pinjaman >= $max_pinjaman) {
-    echo "Tidak bisa pinjam lagi karena sudah mencapai batas maksimal $max_pinjaman buku.<br>";
-} elseif ($buku_terlambat > 0) {
-    echo "Tidak bisa pinjam lagi karena ada buku yang terlambat dikembalikan.<br>";
-    // Hitung total denda
     $total_denda = $denda_per_hari_per_buku * $hari_keterlambatan * $buku_terlambat;
     if ($total_denda > $max_denda) {
         $total_denda = $max_denda;
     }
-    echo "Total Denda: Rp " . number_format($total_denda, 0, ',', '.') . "<br>";
-    // Peringatan keterlambatan
-    echo "Peringatan: Harap segera kembalikan buku yang terlambat untuk menghindari denda lebih lanjut.<br>";
-} else {
-    echo "Bisa pinjam lagi.<br>";
 }
 
-// Menggunakan SWITCH untuk Tentukan Level Member
-echo "<br>Level Member:<br>";
+if ($total_pinjaman >= $max_pinjaman) {
+    $status_pinjam = "Tidak bisa pinjam lagi karena sudah mencapai batas maksimal $max_pinjaman buku.";
+} elseif ($buku_terlambat > 0) {
+    $status_pinjam = "Tidak bisa pinjam lagi karena ada buku yang terlambat dikembalikan.";
+} else {
+    $status_pinjam = "Bisa pinjam lagi.";
+}
+
+$level_member = "Tidak valid";
 switch (true) {
-    case ($total_pinjaman >= 0 && $total_pinjaman <= 5):
-        echo "Bronze<br>";
+    case ($total_pinjaman <= 5):
+        $level_member = "Bronze";
         break;
-    case ($total_pinjaman >= 6 && $total_pinjaman <= 15):
-        echo "Silver<br>";
-        break;
-    case ($total_pinjaman > 15):
-        echo "Gold<br>";
+    case ($total_pinjaman <= 15):
+        $level_member = "Silver";
         break;
     default:
-        echo "Tidak valid<br>";
-        break;
+        $level_member = "Gold";
 }
 ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Status Peminjaman</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .box { max-width: 480px; margin: auto; border: 1px solid #ccc; padding: 16px; border-radius: 8px; }
+        .header { font-size: 18px; font-weight: bold; margin-bottom: 12px; }
+        .row { margin-bottom: 8px; }
+        .label { font-weight: bold; display: inline-block; width: 160px; }
+        .status { padding: 8px; border-radius: 4px; display: inline-block; }
+        .ok { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+        .warn { background: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">Status Peminjaman Anggota</div>
+        <div class="row"><span class="label">Nama:</span><?= htmlspecialchars($nama_anggota) ?></div>
+        <div class="row"><span class="label">Total pinjaman:</span><?= $total_pinjaman ?> buku</div>
+        <div class="row"><span class="label">Buku terlambat:</span><?= $buku_terlambat ?> buku</div>
+        <div class="row"><span class="label">Hari keterlambatan:</span><?= $hari_keterlambatan ?> hari</div>
+        <hr>
+        <div class="row"><span class="label">Status pinjam:</span>
+            <span class="status <?= $status_pinjam === 'Bisa pinjam lagi.' ? 'ok' : 'fail' ?>"><?= htmlspecialchars($status_pinjam) ?></span>
+        </div>
+        <?php if ($buku_terlambat > 0): ?>
+        <div class="row warn"><span class="label">Total denda:</span>Rp <?= number_format($total_denda, 0, ',', '.') ?></div>
+        <div class="row warn"><span class="label">Peringatan:</span>Harap segera kembalikan buku terlambat.</div>
+        <?php endif; ?>
+        <hr>
+        <div class="row"><span class="label">Level member:</span><?= htmlspecialchars($level_member) ?></div>
+    </div>
+</body>
+</html>
+
