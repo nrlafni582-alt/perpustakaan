@@ -247,14 +247,22 @@ LIMIT 5;
 ## 📊 Tugas 2 - DESAIN DATABASE
 
 ### Diagram Entity Relationship (ERD)
-![ERD Database](pngtugas6/erd.drawio.png.png)
+**Keterangan:** Diagram ERD menggambarkan entitas utama dan hubungan antar tabel dalam sistem perpustakaan. Model ini membantu memahami struktur data secara keseluruhan.
+
+![ERD Database](pngtugas6/erd_drawio.png)
 
 ---
 
 ### Struktur Relasi Tabel
+**Keterangan:** Gambar relasi menjelaskan cara tabel-tabel saling terhubung, termasuk hubungan kunci primer dan kunci asing. Ini penting untuk menjaga konsistensi data.
+
 ![Relasi Tabel](pngtugas6/relasi%20tu2.png)
 
+---
+
 ### Struktur Tabel Buku
+**Keterangan:** Struktur tabel buku menampilkan kolom data utama seperti judul, pengarang, harga, stok, kategori, dan penerbit. Penjelasan ini memudahkan pemahaman format penyimpanan data buku.
+
 ![Struktur](pngtugas6/struktur_buku.png)
 
 ---
@@ -262,10 +270,14 @@ LIMIT 5;
 ## 🔹 Data Tabel
 
 ### Kategori & Penerbit
+**Keterangan:** Menampilkan data tabel `kategori` dan `penerbit` yang menjadi referensi untuk buku. Struktur ini menjelaskan bagaimana relasi kategori dan penerbit tersimpan dalam database.
+
 ![Kategori](pngtugas6/kategori%20buku%20struktur%20tabel.png)
 ![Penerbit](pngtugas6/data%20penerbit.png)
 
 ### Data Buku
+**Keterangan:** Menunjukkan isi tabel `buku` beserta contoh data yang dimasukkan. Gambar ini membantu memverifikasi bahwa field buku sesuai dengan ERD dan struktur relasi.
+
 ![Buku](pngtugas6/data%20buku.png)
 
 ---
@@ -273,15 +285,23 @@ LIMIT 5;
 ## 🔹 Query JOIN
 
 ### Buku + Kategori + Penerbit
+**Keterangan:** Menampilkan hasil query JOIN antara tabel buku, kategori, dan penerbit. Ini memperlihatkan informasi lengkap buku beserta nama kategori dan penerbit.
+
 ![Join 1](pngtugas6/4.1%20menampilkan%20buku.png)
 
 ### Jumlah per Kategori
+**Keterangan:** Menampilkan total buku berdasarkan setiap kategori. Query ini digunakan untuk melihat distribusi jumlah buku per kategori.
+
 ![Join 2](pngtugas6/4.2%20jumlah%20per%20kategori.png)
 
 ### Jumlah per Penerbit
+**Keterangan:** Menampilkan total buku berdasarkan penerbit. Ini membantu mengevaluasi kontribusi setiap penerbit terhadap koleksi buku.
+
 ![Join 3](pngtugas6/4.3%20jumlah%20per%20penerbit.png)
 
 ### Detail Lengkap
+**Keterangan:** Menampilkan detail lengkap buku, termasuk kategori dan penerbit, dalam satu tampilan. Hasil ini berguna untuk laporan data buku yang komprehensif.
+
 ![Join 4](pngtugas6/4.4%20buku%20detail%20lengkap.png)
 
 ---
@@ -289,13 +309,19 @@ LIMIT 5;
 ## 🔹 Fitur Tambahan
 
 ### Tabel Rak
+**Keterangan:** Memperlihatkan tabel rak sebagai fitur tambahan untuk mengelompokkan buku berdasarkan lokasi penyimpanan. Fitur ini membantu manajemen inventaris di perpustakaan.
+
 ![Rak](pngtugas6/data%20rak.png)
 
 ### Soft Delete
+**Keterangan:** Menunjukkan mekanisme soft delete pada tabel buku sehingga data tidak dihapus secara permanen. Soft delete menjaga data tetap ada untuk audit dan pemulihan.
+
 ![Soft Delete](pngtugas6/soft%20delete.png)
 ![Soft Delete](pngtugas6/buku%20is%20delete.png)
 
 ### Stored Procedure
+**Keterangan:** Menampilkan contoh stored procedure untuk fungsi otomatis seperti mengecek stok kurang dari 5. Stored procedure ini meningkatkan efisiensi pengolahan data di database.
+
 ![SP 1](pngtugas6/stok%20kurang%20dari%205.png)
 ![SP 2](pngtugas6/stored%20procedur.png)
 
